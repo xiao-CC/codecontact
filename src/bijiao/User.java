@@ -15,8 +15,13 @@ public class User {
         if (obj==null||this.getClass()!=obj.getClass()){
             return false;
         }
-        User u=(User)obj;//强转这里有问题
+        User u=(User)obj;
         if(this.test.equals(u.test)
+                /*
+                integer的equals ：
+                包装类中有个value属性，和intvalue方法
+                也就是说，integer的equals 是比较二者的值
+                 */
                 &&this.id.equals(u.id)
                 &&this.name.equals(u.name)
                 &&this.arrEquals(u.arr)
